@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# ✅ Task Manager - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The React frontend for my fullstack Task Manager application.
 
-## Available Scripts
+I built this project together with a Spring Boot backend to get more hands-on experience with fullstack development and to better understand how a frontend communicates with a REST API, handles authentication and manages application state.
 
-In the project directory, you can run:
+The backend lives in a separate repository:
 
-### `npm start`
+[Task Manager Backend](https://github.com/tvsandvold/taskmanager)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is the user-facing part of my Task Manager project.
 
-### `npm test`
+The goal was to build a simple and practical interface around the backend API, where users can create an account, log in and manage their tasks.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Building the frontend gave me practical experience with React and, more importantly, with connecting a frontend to a separate backend application.
 
-### `npm run build`
+## Built with
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- JavaScript
+- HTML
+- CSS
+- npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application communicates with a separate Java and Spring Boot backend through a REST API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What can it do?
 
-### `npm run eject`
+- Register a new user
+- Log in to an existing account
+- Communicate with the backend API
+- Handle JWT-based authentication
+- Display the user's tasks
+- Create new tasks
+- Update existing tasks
+- Delete tasks
+- Keep the frontend and backend separated as two independent applications
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Authentication
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Authentication is handled together with the Spring Boot backend.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+When a user logs in, the frontend sends the credentials to the backend. After a successful login, the backend returns a JWT that can be used when making requests to protected API endpoints.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This was one of the more useful parts of the project for me, since it helped me understand how authentication works across a separate frontend and backend rather than only inside one application.
 
-## Learn More
+## Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This repository only contains the frontend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The backend handles:
 
-### Code Splitting
+- User registration and login
+- JWT authentication
+- Spring Security
+- Task management
+- Database persistence
+- PostgreSQL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You can find the backend here:
 
-### Analyzing the Bundle Size
+[tvsandvold/taskmanager](https://github.com/tvsandvold/taskmanager)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Running it locally
 
-### Making a Progressive Web App
+### What you'll need
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Make sure you have:
 
-### Advanced Configuration
+- Node.js
+- npm
+- The Task Manager backend running locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 1. Clone the repository
 
-### Deployment
+```bash
+git clone https://github.com/tvsandvold/taskmanager-frontend.git
+cd taskmanager-frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 2. Install dependencies
 
-### `npm run build` fails to minify
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 3. Start the application
+
+```bash
+npm start
+```
+
+The frontend will normally be available at:
+
+```text
+http://localhost:3000
+```
+
+For the complete application to work, the backend also needs to be running.
+
+## Running the backend
+
+Clone the backend repository separately:
+
+```bash
+git clone https://github.com/tvsandvold/taskmanager.git
+```
+
+Then follow the setup instructions in the backend repository:
+
+[Task Manager Backend](https://github.com/tvsandvold/taskmanager)
+
+With both applications running, the setup looks like this:
+
+```text
+React Frontend
+      ↓
+   REST API
+      ↓
+Spring Boot Backend
+      ↓
+  PostgreSQL
+```
+
+## Why I built it
+
+I wanted this project to be more than just a React interface.
+
+The interesting part for me was connecting everything together and understanding the complete flow from the user interface to the database:
+
+**User → React → REST API → Spring Boot → PostgreSQL**
+
+Working on the frontend gave me more experience with React, API communication and authentication, while the project as a whole helped me understand how the different parts of a fullstack application work together.
+
+It's a project I can continue improving as I learn more.
+
+## Author
+
+**Terje Vo Sandvold**
+
+- [GitHub](https://github.com/tvsandvold)
+- [LinkedIn](https://linkedin.com/in/tvsandvold)
