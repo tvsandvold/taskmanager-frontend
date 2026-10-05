@@ -1,4 +1,4 @@
-# ✅ Task Manager - Frontend
+# Task Manager - Frontend
 
 The React frontend for my fullstack Task Manager application.
 
